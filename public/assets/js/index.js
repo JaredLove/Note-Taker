@@ -50,7 +50,7 @@ const saveNote = (note) => {
   })
   .then(postResponse => {
     console.log(postResponse);
-    alert('Thank you for adding an note!');
+    alert('Note has been added refresh page!');
   });
 };
 const deleteNote = (id) => {

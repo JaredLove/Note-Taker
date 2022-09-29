@@ -13,15 +13,15 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
 app.use(express.json());
-
+// serves public assets
 app.use(express.static('public'));
-
+//find note by id
 function findById(id, noteArray) {
   const result = noteArray.filter(note => note.id === id)[0];
  
   return result;
 }
-
+// create a new note
 function createNewNote(body, noteArray) {
     const note = body;
     noteArray.push(note);
@@ -35,7 +35,7 @@ function createNewNote(body, noteArray) {
 
 
 
-
+// api get route for notes 
 app.get('/api/notes', (req, res) => {
   let results = (notes);
 
@@ -44,7 +44,7 @@ app.get('/api/notes', (req, res) => {
  
   
 })
-
+// api get route for notes by id
 app.get('/api/notes/:id', (req, res) => {
 const result = findById(req.params.id, notes);
   if (result) {
@@ -54,7 +54,7 @@ const result = findById(req.params.id, notes);
 }
 });
 
-
+// api post route for notes 
 app.post('/api/notes', (req, res) => {
 
   req.body.id = notes.length.toString();
@@ -65,16 +65,16 @@ app.post('/api/notes', (req, res) => {
       res.json(note);
     }
 })
-
+// serves index html when called
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'));
 });
-
+// serves notes html when called
 app.get('/notes', (req, res) => {
   res.sendFile(path.join(__dirname, './public/notes.html'));
 });
 
-
+// serves index html when called for error in searc
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'));
 });

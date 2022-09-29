@@ -13,6 +13,16 @@
       "title": "Make a coffe",
       "text": "8:00 AM",
       "id": "2"
+    },
+    {
+      "title": "Test",
+      "text": "Test",
+      "id": "3"
+    },
+    {
+      "title": "Wake up",
+      "text": "Wake up",
+      "id": "4"
     }
   ]
 }
