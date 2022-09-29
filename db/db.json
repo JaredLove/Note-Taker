@@ -1,0 +1,18 @@
+{
+  "notes": [
+    {
+      "title": "Test Title",
+      "text": "Test text"
+    },
+    {
+      "title": "asd",
+      "text": "asd",
+      "id": "1"
+    },
+    {
+      "title": "Make a coffe",
+      "text": "8:00 AM",
+      "id": "2"
+    }
+  ]
+}
