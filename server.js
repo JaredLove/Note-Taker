@@ -9,7 +9,28 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 
+// parse incoming string or array data
+app.use(express.urlencoded({ extended: true }));
+// parse incoming JSON data
+app.use(express.json());
 
+app.use(express.static('public'));
+
+function findById(id, noteArray) {
+  const result = noteArray.filter(note => note.id === id)[0];
+ 
+  return result;
+}
+
+function createNewNote(body, noteArray) {
+    const note = body;
+    noteArray.push(note);
+    fs.writeFileSync(
+      path.join(__dirname, './db/db.json'),
+      JSON.stringify({ notes: noteArray }, null, 2)
+    );
+    return note;
+  }
 
 
 
