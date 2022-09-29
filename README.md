@@ -1,6 +1,6 @@
 # Note Taker 
 
-## A note taker using node js 
+## A note taker using express js
 
 # License (#MIT)
 
